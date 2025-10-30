@@ -121,9 +121,8 @@ It is **not a financial advice or real company report**, but an *academic simula
 
 ## ✍️ Author
 
-**[Your Name]**  
-MSc Financial Management | UC3M Economics  
-Siemens Energy (Finance Excellence Intern)  
+**Enrique Ruiz de Almiron Da Silva**  
+BSc Economics | UC3M   
 Focused on Treasury Analytics, Quantitative Finance, and Data Visualization.
 
 📎 [LinkedIn](https://linkedin.com/in/yourprofile) · [GitHub](https://github.com/yourusername)
