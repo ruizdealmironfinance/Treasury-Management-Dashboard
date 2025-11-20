@@ -118,7 +118,7 @@ It is **not a financial advice or real company report**, but an *academic simula
 BSc Economics | UC3M   
 Focused on Treasury Analytics, Quantitative Finance, and Data Visualization.
 
-📎 [LinkedIn](https://linkedin.com/in/yourprofile) · [GitHub](https://github.com/yourusername)
+📎 [LinkedIn](https://www.linkedin.com/in/enriqueruizdealmiron/) · [GitHub](https://github.com/ruizdealmironfinance)
 
 ---
 
