@@ -32,8 +32,8 @@ The goal is to **recreate the end-to-end pipeline** a Treasury Analyst would man
 
 To maintain clarity and educational value:
 
-- The **debt schedule** module was removed to avoid unnecessary complexity.  
-  - Interest coverage is simulated using a **proxy expense** (3.5% of assumed debt or 45% of financing outflows).  
+- The **debt schedule** module was removed to avoid unnecessary complexity.
+- Interest coverage is simulated using a **proxy expense** (3.5% of assumed debt or 45% of financing outflows).  
 - Dataset is **synthetic**, but scaled to realistic industrial-sector magnitudes.  
 - Forecasts are **scenario-based**, using constant growth rates and multipliers.  
 - `Operating Inflows – Operating Outflows` acts as an **EBITDA proxy**.  
