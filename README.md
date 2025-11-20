@@ -1,11 +1,10 @@
-# Treasury-Management-Dashboard
 # 💰 Treasury Management Dashboard (Educational Simulation)
 
 ### 🎯 Objective  
 This project simulates the **core analytical workflow of a corporate treasury department** — from raw cashflow data to executive dashboards.  
-It integrates **liquidity monitoring, working capital analysis, scenario forecasting, and FX exposure**, using a simplified but realistic dataset.
+It integrates **liquidity monitoring, working-capital analysis, and scenario forecasting** using a simplified but realistic dataset.
 
-The goal is to **recreate the end-to-end pipeline** a Treasury Analyst would manage in a corporate environment (e.g., Repsol, Siemens Energy, BBVA Treasury), and to visualize key insights in **Power BI** and a **professional PDF report**.
+The goal is to **recreate the end-to-end pipeline** a Treasury Analyst would manage in a corporate environment (e.g., Repsol, Siemens Energy, BBVA Treasury), and to visualize key insights in **Power BI**.
 
 > ⚙️ *This project is purely educational. It does not use real company data but aims to mirror professional financial analysis and visualization standards.*
 
@@ -14,99 +13,93 @@ The goal is to **recreate the end-to-end pipeline** a Treasury Analyst would man
 ## 🧩 Project Overview
 
 | Module | Description | Main KPIs |
-|--------|--------------|-----------|
-| **Liquidity & Cashflow** | Tracks inflows, outflows, and closing cash positions over time | Free Cash Flow (FCF), Net Cash Flow, Cash Buffer |
+|--------|-------------|-----------|
+| **Liquidity & Cashflow** | Tracks inflows, outflows, and closing cash positions over time | FCF, Net Cash Flow, Cash Buffer |
 | **Working Capital Efficiency** | Measures operational liquidity and efficiency | CCC, DSO, DPO, DIO, Liquidity Ratio, Quick Ratio |
-| **FX Exposure** | Simulates exposure to foreign currencies | Net FX Impact, % USD Flows |
-| **Scenario Forecast** | Projects liquidity under base, optimistic, and pessimistic scenarios | Forecasted Closing Cash, Liquidity Gap, Stress Impact |
+| **Scenario Forecast (2026)** | Projects liquidity under different stress environments | Projected Closing Cash, Liquidity Gap, Interest Coverage |
 
 ---
 
 ## ⚙️ Tools & Techniques
-- **Excel** — Financial modeling, ratio computation, forecasting logic.
-- **Power BI** — Data visualization and executive dashboarding.
-- **Power Query / DAX (basic)** — Data transformations and KPI measures.
+- **Excel** — Financial modeling and scenario logic  
+- **Power BI** — Dashboarding and visualization  
+- **Power Query / DAX (basic)** — Data transformations and custom KPIs  
 - **Financial Concepts** — Liquidity analysis, working capital cycles, solvency metrics, scenario analysis.
-
----
-
-## 📂 Project Structure
-
 
 ---
 
 ## 🧮 Simplifications & Assumptions
 
 To maintain clarity and educational value:
-- The **debt schedule** module was excluded to keep relationships simple.  
-  Interest coverage is calculated using a **proxy** (3.5 % of total debt or 45 % of financing outflows) to simulate interest expense.
-- Data is **synthetic** but scaled realistically (values in € millions).
-- Forecasts are **manually simulated** using constant growth rates and scenario multipliers.
-- Depreciation & amortization are **omitted**; `Operating Inflows – Operating Outflows` serves as an **EBITDA proxy**.
 
-These simplifications preserve the *analytical essence* of treasury management while keeping the model reproducible and pedagogically clean.
+- The **debt schedule** module was removed to avoid unnecessary complexity.  
+  - Interest coverage is simulated using a **proxy expense** (3.5% of assumed debt or 45% of financing outflows).  
+- Dataset is **synthetic**, but scaled to realistic industrial-sector magnitudes.  
+- Forecasts are **scenario-based**, using constant growth rates and multipliers.  
+- `Operating Inflows – Operating Outflows` acts as an **EBITDA proxy**.  
+- Depreciation, amortization and taxes are not modeled.
+
+These simplifications preserve core treasury logic while keeping the model clean and reproducible.
 
 ---
 
 ## 📊 Expected Outputs
 
-### 🟩 Power BI Dashboard
+---
 
-#### **Page 1 – Liquidity Overview**
-- **Cards:** Cash (Last), Net Cash Flow, FCF, Cash Buffer  
+### 🟩 **Dashboard 1 — Liquidity Overview (2024–2025)**
+
+#### **Components**
+- **Cards:**  
+  - FCF_Total  
+  - Net_Cash_Flow_Sum  
+  - Cash_Buffer_Last  
+  - Closing_Cash_Last  
 - **Charts:**  
-  - Line: *Cash Balance Over Time*  
-  - Waterfall: *Inflows vs Outflows*  
-  - Bar: *Net Cash Flow by Month*  
-- **Slicer:** Year  
+  - *Closing Cash Over Time* (line)  
+  - *Inflows vs Outflows* (stacked bars)  
+  - *Net Cash Flow by Month* (bar)  
+- **Slicer:** Year (2024, 2025, 2026)
 
-🧠 *Insight:* “Liquidity remains stable with a 2.5-month cash buffer. Peaks and troughs correspond to CapEx and financing activities.”
+#### **Insight**  
+Cash declines steadily during mid-2025 and stabilizes toward year-end. Operating inflows remain stable; financing outflows and capital spending drive the negative monthly swings.
 
 ---
 
-#### **Page 2 – Working Capital & Efficiency**
-- **Cards:** Liquidity Ratio, Quick Ratio, CCC  
+### 🟩 **Dashboard 2 — Working Capital & Efficiency**
+
+#### **Components**
+- **Cards:**  
+  - Quick_Ratio_Avg  
+  - Liquidity_Ratio_Avg  
+  - CCC_Avg  
 - **Charts:**  
-  - Bar: *DSO vs DPO vs DIO*  
-  - Line: *CCC Trend*  
-  - Stacked Bar: *Working Capital Components*  
+  - AR/AP/Inventory by quarter (stacked bars)  
+  - CCC trend (line)  
+  - DSO, DPO, DIO per quarter (bar groups)
 
-🧠 *Insight:* “CCC improved by 8 days YoY due to faster collections and reduced inventory levels.”
+#### **Insight**  
+The CCC gradually improves over time, mainly due to lower DIO and more disciplined collections, while payables remain stable.
 
 ---
 
-#### **Page 3 – FX & Risk Overview**
-- **Cards:** % USD Flows, FX Net Impact (€)  
+### 🟩 **Dashboard 3 — Scenario Forecast — 2026 Liquidity & Solvency**
+
+#### **Components**
+- **Cards:**  
+  - Projected_Closing_Cash  
+  - FCF_Avg_Scn  
+  - Interest_Coverage_Scn  
+  - Liquidity_Gap  
 - **Charts:**  
-  - Line: *EUR/USD Trend*  
-  - Pie: *FX Flow Distribution by Currency*  
-  - Bar: *FX Net Exposure Over Time*  
+  - Multi-scenario *Closing Cash Forecast* (Base, Optimistic, Pessimistic)  
+  - Projected Closing Cash (bar comparison)  
+  - Monthly inflows & outflows per scenario  
+- **Table:** Scenario KPI summary
 
-🧠 *Insight:* “USD exposure represents 25 % of total flows; a +5 % EUR/USD appreciation would reduce net cash by 2 %.”
+#### **Insight**  
+The pessimistic scenario shows declining liquidity but remains above the minimum buffer threshold. The optimistic scenario produces strong cash accumulation and a healthy solvency margin.
 
----
-
-#### **Page 4 – Forecast & Scenarios**
-- **Cards:** Forecasted Cash (Base), Liquidity Gap (Pessimistic vs Base), Projected Interest Expense  
-- **Charts:**  
-  - Multi-line: *Forecasted Cash Balance (3 scenarios)*  
-  - Table: *KPI comparison across scenarios*  
-  - Waterfall: *Sensitivity by driver (Revenue, COGS, Interest Rate, CapEx)*  
-
-🧠 *Insight:* “Under pessimistic conditions, liquidity falls –12 %, but the cash buffer remains above 1.1× operating expenses.”
-
----
-
-### 🧾 **Final Output – Executive Report (PDF)**
-A one-page visual summary consolidating:
-- Key metrics (Cash, FCF, Liquidity Ratio, CCC, FX Exposure)  
-- Combined *Historical + Forecast* cash balance chart  
-- Scenario comparison table  
-- 2–3 key takeaways in concise management tone.  
-
-> 💼 *Purpose:* to replicate how Treasury & FP&A teams report liquidity and cash-risk insights to senior management or CFOs.
-
----
 
 ## 🧠 Educational Purpose
 
